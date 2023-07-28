@@ -12,6 +12,18 @@ def Factorial(numero):
         Factorial(-2) debe retornar nulo
     '''
     #Tu código aca:
+    factorial=1
+    if type(numero)== int:
+        if (numero)>=1:
+            for elemento in range(1, numero+1):
+                factorial=factorial*elemento
+            return factorial
+        else:
+            print('Ingrese un entero mayor a 0')
+            return None
+    else: 
+        print('Debe ingresar un entero')
+        return None
     return 'Funcion incompleta'
 
 def EsPrimo(valor):
@@ -26,6 +38,19 @@ def EsPrimo(valor):
         EsPrimo(8) debe retornar False
     '''
     #Tu código aca:
+    if type(valor)== int:
+        if (valor)>=1:
+            primo=True
+            for divisor in range(2, valor):
+                if valor%divisor==0:
+                    primo=False
+            return primo
+        else:
+            print('Ingrese un entero mayor a 0')
+            return None
+    else: 
+        print('Debe ingresar un entero')
+        return None
     return 'Funcion incompleta'
     
 def ClaseAnimal(especie, color):
@@ -47,4 +72,12 @@ def ClaseAnimal(especie, color):
         a.CumpliAnios() -> debe devolver 3
     '''
     #Tu código aca:
-    return 'Funcion incompleta'
+    class ClAnimal():
+        def __init__(self, especie, color):
+            self.especie=especie
+            self.color=color
+            self.Edad=0
+        def CumplirAnios(self):
+            self.Edad+=1
+            return self.Edad
+    return ClAnimal(especie, color)
